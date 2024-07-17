@@ -39,14 +39,13 @@ Helm https://helm.sh/
    This installs the minikube cluster to run in your local
 
     You can then run them with `just RECIPE`:
-
     ```sh
     $ just minikube-setup
     ```
+
    #### 2. Build payments api docker image
      
     Build the Payments-API as a Docker image
-
     ```sh
     $ just build-payments-api
     ```
