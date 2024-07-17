@@ -26,7 +26,7 @@ Helm https://helm.sh/
   
   #### 2. Install Kubectl - CLI tool for interacting with Kubernetes Clusters
 
-  #### 3. Install minikube - Install K3d from the binaries - https://minikube.sigs.k8s.io/docs/start/
+  #### 3. Install minikube - https://minikube.sigs.k8s.io/docs/start/
 
   #### 4. Install Justfile - To automate the commands - https://github.com/casey/just
 
@@ -43,7 +43,7 @@ Helm https://helm.sh/
     ```sh
     $ just minikube-setup
     ```
-    
+
    #### 2. Build payments api docker image
      
     Build the Payments-API as a Docker image
