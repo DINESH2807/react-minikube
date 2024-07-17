@@ -1,0 +1,27 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: {{ include "react-frontend.fullname" . }}
+  labels:
+    app: {{ include "react-frontend.name" . }}
+    chart: {{ include "react-frontend.chart" . }}
+    release: {{ .Release.Name }}
+    heritage: {{ .Release.Service }}
+spec:
+  replicas: {{ .Values.replicaCount }}
+  selector:
+    matchLabels:
+      app: {{ include "react-frontend.fullname" . }}
+  template:
+    metadata:
+      labels:
+        app: {{ include "react-frontend.fullname" . }}
+    spec:
+      containers:
+        - name: react-frontend
+          image: "{{ .Values.image.repository }}:{{ .Values.image.tag }}"
+          ports:
+            - containerPort: 80
+          env:
+            - name: PAYMENTS_APP_API_URL
+              value: "{{ .Values.env.PAYMENTS_APP_API_URL }}"

@@ -1,0 +1,12 @@
+replicaCount: 1
+
+image:
+  repository: react-frontend
+  tag: v1
+  
+#update with the minikube url of the service of payments-api ${minikube service payments-api --url}
+env:
+  PAYMENTS_APP_API_URL: "http://127.0.0.1:57440"
+ 
+service:
+  port: 80

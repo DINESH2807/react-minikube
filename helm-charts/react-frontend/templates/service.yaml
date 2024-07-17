@@ -1,0 +1,17 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: {{ include "react-frontend.fullname" . }}
+  labels:
+    app: {{ include "react-frontend.name" . }}
+    chart: {{ include "react-frontend.chart" . }}
+    release: {{ .Release.Name }}
+    heritage: {{ .Release.Service }}
+spec:
+  type: LoadBalancer
+  ports:
+    - protocol: TCP
+      port: 80
+      targetPort: 80
+  selector:
+    app: {{ include "react-frontend.fullname" . }}
